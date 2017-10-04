@@ -61,11 +61,10 @@ git push origin master
 下記のURL部分を削除したいファイルのURLに変更すること
 git filter-branch --tree-filter "rm -f [URL]" HEAD
 
-tes
-
 """
 
-
-
-
-
+●remote url変更
+①現在のアドレスを確認
+git remote -v
+②向き先を変更
+git remote set-url origin https://github.com/keyoshimura/work_20171004.git
