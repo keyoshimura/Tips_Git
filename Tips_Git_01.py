@@ -77,7 +77,11 @@ git remote set-url origin https://github.com/keyoshimura/work_20171004.git
 ①対象フォルダに移動
 
 ②クローン作製
+(URL)
 git clone https://github.com/keyoshimura/work_20171004.git
+(ssh_会社等ではこの形が主流か)
+git clone ssh://user@hostname/path/to/repo
+
 
 ●pull(執筆途中)
 作業内容を反映させる前に、「リモートリポジトリのmasterブランチの最新版」情報を取得する必要がある
