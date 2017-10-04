@@ -61,45 +61,11 @@ git push origin master
 下記のURL部分を削除したいファイルのURLに変更すること
 git filter-branch --tree-filter "rm -f [URL]" HEAD
 
+tes
+
 """
 
-●remote url変更
-①現在のアドレスを確認
-git remote -v
-②向き先を変更
-git remote set-url origin https://github.com/keyoshimura/work_20171004.git
 
 
-●クローン作製
-作業開始時に、リモートリポジトリの情報をローカルに取得する必要がある。
-下記のコマンドにて対応
-
-①対象フォルダに移動
-
-②クローン作製
-git clone https://github.com/keyoshimura/work_20171004.git
-
-●pull(執筆途中)
-作業内容を反映させる前に、「リモートリポジトリのmasterブランチの最新版」情報を取得する必要がある
-そのため、特定作業ディレクトリに上記の内容を反映させる必要がある。
-具体的には、下記の手順に従って最新版の情報を取得する。
-
-①空のフォルダを作成する
-普通に空のフォルダを作成する
-
-②リモートリポジトリ情報をセット
-まず、新しく作成したフォルダのリモートリポジトリ情報を確認する。
-git remote -v
-
-続いて、コピーしてきたいブランチをリモートリポジトリURLとしてセット(URLではなくsshね)
-git remote set-url origin git@github.com:keyoshimura/Git_Tips.git
-
-③pull
-上記で指定したリモートリポジトリURLのデータを持ってくる(pull)
-git pull origin master
-
-
-下記URLを参考にしました。
-https://qiita.com/minoringo/items/917e325892733e0d606e
 
 
