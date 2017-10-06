@@ -1,0 +1,4 @@
+色々なコードが置いてあるURL
+
+●最適化に用いる関数色々(sgd,momentum,adagrad,adam等)
+https://github.com/Lasagne/Lasagne/blob/master/lasagne/updates.py
