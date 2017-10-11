@@ -15,6 +15,6 @@ df = pd.read_csv(r'./movie_data.csv', encoding="cp932")
 import locale
 print(locale.getpreferredencoding(False))
 
-
-
+Ql‚É‚µ‚½URL‚Í‰º‹L
+http://www.tekito-gottani.com/entry/2016/10/03/183527
 
