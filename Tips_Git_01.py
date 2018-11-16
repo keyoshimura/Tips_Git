@@ -1,109 +1,115 @@
 # coding:utf-8
-# Git�̊�{�I�Ȏg�����ɂ��Ẵ����ł�
+# Gitの基本的な使い方についてのメモです
 
 
 """
-Github�̃R�}���h����
+Githubのコマンド流れ
 
-���LURL���Q�Ƃ��邱��
+下記URLを参照すること
 https://techacademy.jp/magazine/6235
 
 
-�@Github�Ƀ��O�C�����ă��|�W�g�����쐬����
-�uNew Repository�v�A�uCreate repository�v�{�^��������
-���̉�ʂŃ����[�g���|�W�g���̃A�h���X���\�������̂ŁA�T���Ă�������
+①Githubにログインしてリポジトリを作成する
+「New Repository」、「Create repository」ボタンを押す
+次の画面でリモートリポジトリのアドレスが表示されるので、控えておくこと
 
-�A�t�@�C�����쐬
-���ۂɏ���������t�@�C�����쐬����
-�e�L�X�g�G�f�B�^�ł�Pycharm�ł��Ȃ�ł������ł��B
+②ファイルを作成
+実際に処理させるファイルを作成する
+テキストエディタでもPycharmでもなんでもいいです。
 
-�B���[�J��PC�Ɂu���[�J�����|�W�g���v���쐬����
-���[�J�����|�W�g���ɂ������t�H���_�Ɉړ�(cmd��)���āA�ugit init�v�����s
+③ローカルPCに「ローカルリポジトリ」を作成する
+ローカルリポジトリにしたいフォルダに移動(cmdで)して、「git init」を実行
 
-===========,awesome�f�B���N�g���Ɉړ����āA���������[�J�����|�W�g���ɂ�����=====
+===========,awesomeディレクトリに移動して、そこをローカルリポジトリにした例=====
 mkdir awesome
 cd awesome
 git init
-===========,awesome�f�B���N�g���Ɉړ����āA���������[�J�����|�W�g���ɂ�����A�ȏ�
+===========,awesomeディレクトリに移動して、そこをローカルリポジトリにした例、以上
 
-�ugit init�v�R�}���h�����s���邱�ƂŁA�J�����g�f�B���N�g����Git���|�W�g���ɕϊ��ł���
+「git init」コマンドを実行することで、カレントディレクトリをGitリポジトリに変換できる
 
-�C�����[�g���|�W�g���ɔ��f���������t�@�C�����u�C���f�b�N�X�v�ɒǉ�����(git add)
-��قǍ쐬�����t�@�C�������[�J�����|�W�g���ɒǉ�����B
-��̓I�ɂ͉��L�̂悤�ȃR�}���h�Łu�C���f�b�N�X�v�ɒǉ�����B
-�C���f�b�N�X�Ƃ́A���|�W�g���Ɂu�R�~�b�g���邽�߂ɕύX���e���ꎞ�I�ɕۑ�����ꏊ�̂��Ƃł���B
+④リモートリポジトリに反映させたいファイルを「インデックス」に追加する(git add)
+先ほど作成したファイルをローカルリポジトリに追加する。
+具体的には下記のようなコマンドで「インデックス」に追加する。
+インデックスとは、リポジトリに「コミットするために変更内容を一時的に保存する場所のことである。
 
-======================�uhello.html�v�t�@�C�����C���f�b�N�X�ɒǉ������=======
+======================「hello.html」ファイルをインデックスに追加する例=======
 git add hello.html
 
-�D�u�C���f�b�N�X�v�̓��e�����[�J�����|�W�g���Ɂu�R�~�b�g�v����(git commit)
-��قǃC���f�b�N�X�ɒǉ������t�@�C�������[�J�����|�W�g���ɃR�~�b�g����B
-git commit -m �gadd new file�h
+⑤「インデックス」の内容をローカルリポジトリに「コミット」する(git commit)
+先ほどインデックスに追加したファイルをローカルリポジトリにコミットする。
+git commit -m “add new file”
 
-�܂��A���L�̃R�}���h�Łu�t�@�C�����ǉ�����Ă��邩�v���m�F���邱�Ƃ��\
+また、下記のコマンドで「ファイルが追加されているか」を確認することが可能
 git status
 
-�E�����[�g���|�W�g���̏���ǉ�(git remote)
-git remote�R�}���h
+⑥リモートリポジトリの情報を追加(git remote)
+git remoteコマンド
 
-====================�菇�@�Ń��|�W�g���쐬���ɏo��URL���uhttps://github.com//awesome.git�v�������ꍇ�̗�
+====================手順①でレポジトリ作成時に出たURLが「https://github.com//awesome.git」だった場合の例
 git remote add origin https://github.com//awesome.git
 
-�F���[�J�����|�W�g�����v�b�V�����ă����[�g���|�W�g���ɔ��f������(git push)
-���[�J�����|�W�g���̕ύX�������[�g���|�W�g���ɔ��f������
+⑦ローカルリポジトリをプッシュしてリモートリポジトリに反映させる(git push)
+ローカルリポジトリの変更をリモートリポジトリに反映させる
 git push origin master
 
-���̂Ƃ����[�U�[���ƃp�X���[�h�𕷂����̂œ��͂��邱��
+このときユーザー名とパスワードを聞かれるので入力すること
 
 
 
-�����𓙂��폜����R�}���h
-���L��URL�������폜�������t�@�C����URL�ɕύX���邱��
+●履歴等を削除するコマンド
+下記のURL部分を削除したいファイルのURLに変更すること
 git filter-branch --tree-filter "rm -f [URL]" HEAD
 
 """
 
-��remote url�ύX
-�@���݂̃A�h���X���m�F
+●remote url変更
+①現在のアドレスを確認
 git remote -v
-�A�������ύX
+②向き先を変更
 git remote set-url origin https://github.com/keyoshimura/work_20171004.git
 
 
-���N���[���쐻
-��ƊJ�n���ɁA�����[�g���|�W�g���̏������[�J���Ɏ擾����K�v������B
-���L�̃R�}���h�ɂđΉ�
+●クローン作製
+作業開始時に、リモートリポジトリの情報をローカルに取得する必要がある。
+下記のコマンドにて対応
 
-�@�Ώۃt�H���_�Ɉړ�
+①対象フォルダに移動
 
-�A�N���[���쐻
+②クローン作製
 (URL)
 git clone https://github.com/keyoshimura/work_20171004.git
-(ssh_��Г��ł͂��̌`���嗬��)
+(ssh_会社等ではこの形が主流か)
 git clone ssh://user@hostname/path/to/repo
 
 
-��pull(���M�r��)
-��Ɠ��e�𔽉f������O�ɁA�u�����[�g���|�W�g����master�u�����`�̍ŐV�Łv�����擾����K�v������
-���̂��߁A�����ƃf�B���N�g���ɏ�L�̓��e�𔽉f������K�v������B
-��̓I�ɂ́A���L�̎菇�ɏ]���čŐV�ł̏����擾����B
+●pull(執筆途中)
+作業内容を反映させる前に、「リモートリポジトリのmasterブランチの最新版」情報を取得する必要がある
+そのため、特定作業ディレクトリに上記の内容を反映させる必要がある。
+具体的には、下記の手順に従って最新版の情報を取得する。
 
-�@��̃t�H���_���쐬����
-���ʂɋ�̃t�H���_���쐬����
+①空のフォルダを作成する
+普通に空のフォルダを作成する
 
-�A�����[�g���|�W�g�������Z�b�g
-�܂��A�V�����쐬�����t�H���_�̃����[�g���|�W�g�������m�F����B
+②リモートリポジトリ情報をセット
+まず、新しく作成したフォルダのリモートリポジトリ情報を確認する。
 git remote -v
 
-�����āA�R�s�[���Ă������u�����`�������[�g���|�W�g��URL�Ƃ��ăZ�b�g(URL�ł͂Ȃ�ssh��)
+続いて、コピーしてきたいブランチをリモートリポジトリURLとしてセット(URLではなくsshね)
 git remote set-url origin git@github.com:keyoshimura/Git_Tips.git
 
-�Bpull
-��L�Ŏw�肵�������[�g���|�W�g��URL�̃f�[�^�������Ă���(pull)
+③pull
+上記で指定したリモートリポジトリURLのデータを持ってくる(pull)
 git pull origin master
 
 
-���LURL���Q�l�ɂ��܂����B
+下記URLを参考にしました。
 https://qiita.com/minoringo/items/917e325892733e0d606e
 
 
+
+●Pushしてもうまくいかない時
+ローカルリポジトリ、リモートリポジトリをちゃんと指定しないとダメな場合もある。
+例えば、下記のように指定してPUSHすることでうまくいくかもしれない。
+
+$git push origin [ローカルリポジトリ]:[リモートリポジトリ]
